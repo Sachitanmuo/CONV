@@ -1,0 +1,7 @@
+*.fsdb
+*.vpd
+nWavelog/
+VerdiLog/
+simv.daidir/
+history/
+verilator_example_prj/

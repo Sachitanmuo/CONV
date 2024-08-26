@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1723559908.626024879, "rt":1.19, "ut":0.46, "st":0.12}}
+{"vcselab":{"timestamp_begin":1723559909.879352929, "rt":20.75, "ut":0.19, "st":0.09}}
+{"link":{"timestamp_begin":1723559930.687876723, "rt":0.35, "ut":0.11, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1723559907.936141442}
+{"VCS_COMP_START_TIME": 1723559907.936141442}
+{"VCS_COMP_END_TIME": 1723560080.661542959}
+{"VCS_USER_OPTIONS": "-R -full64 -sverilog testbench.sv PATTERN.sv conv.v SRAM_I.v SRAM_OT.v SRAM_O.v SRAM_K.v SRAM_B.v SRAM_BIAS.v SRAM_I000.v SRAM_I001.v SRAM_I010.v SRAM_I011.v SRAM_I100.v +maxdelays -debug_pp +v2k +memcbk +access+r +v2k +access+r -P /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a"}
+{"vcs1": {"peak_mem": 335460}}
+{"stitch_vcselab": {"peak_mem": 231556}}

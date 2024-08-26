@@ -1,0 +1,148 @@
+Magic 271485
+Revision Verdi_P-2019.06
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 1920 27 1920 1057 294 229
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 323.221007 439.737418
+cursor 390.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 13
+; marker line index
+markerPos 32
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
+addSignal -h 15 /testbench/u_conv/epoch_counter_seq[5:0]
+addSignal -h 15 -holdScope mem_epoch_seq[5:0]
+addSignal -h 15 -holdScope out_data[15:0]
+addSignal -h 15 -holdScope dout_OT0[24:0]
+addSignal -h 15 -holdScope dout_OT1[24:0]
+addSignal -h 15 -holdScope din_OT0[24:0]
+addSignal -h 15 -holdScope din_OT1[24:0]
+addSignal -h 15 -holdScope we_OT0
+addSignal -h 15 -holdScope we_OT1
+addSignal -h 15 -holdScope we_O0
+addSignal -h 15 -holdScope we_O1
+addSignal -h 15 -holdScope out_data_pre[15:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_OT0[11:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_OT1[11:0]
+addGroup "G2"
+addSignal -h 15 -UNSIGNED -BIN /testbench/u_SRAM_000/dout[0:128]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr[11:0]
+addSignal -h 15 -UNSIGNED -UDEC /testbench/u_conv/x_counter_seq[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope y_counter_seq[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope counter_seq[15:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mac_16_seq[24:0]
+addSignal -h 15 -holdScope image_valid
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_00[11:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_01[11:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_10[11:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_11[11:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope d00[9:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope d01[9:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope d10[9:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope d11[9:0]
+addSignal -h 15 -holdScope cur_state[2:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_comb[0:15]
+addSignal -expanded -h 15 -UNSIGNED -BIN -holdScope image_seq[0:15]
+addSignal -expanded -h 15 -UNSIGNED -BIN -holdScope image_seq[0][0:2]
+addSignal -expanded -h 15 -UNSIGNED -BIN -holdScope image_seq[0][0][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][0][0][8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][0][1][8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][0][2][8:0]
+addSignal -expanded -h 15 -UNSIGNED -BIN -holdScope image_seq[0][1][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][1][0][8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][1][1][8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][1][2][8:0]
+addSignal -expanded -h 15 -UNSIGNED -BIN -holdScope image_seq[0][2][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][2][0][8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][2][1][8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[0][2][2][8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[1][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[2][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[3][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[4][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[5][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[6][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[7][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[8][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[9][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[10][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[11][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[12][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[13][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[14][0:2]
+addSignal -h 15 -UNSIGNED -BIN -holdScope image_seq[15][0:2]
+addGroup "G3"
+addGroup "G4"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/SRAM_I000"
+"/testbench"
+"/testbench/u_SRAM_000"
+"/testbench/u_SRAM_001"
+"/testbench/u_SRAM_B00"
+"/testbench/u_SRAM_K1"
+"/testbench/u_SRAM_O0"
+"/testbench/u_SRAM_OT0"
+"/testbench/u_SRAM_OT1"
+"/testbench/u_conv"
+
+SCOPE_LIST_BEGIN
+"/SRAM_I000"
+"/testbench"
+"/testbench/u_conv"
+"/testbench/u_SRAM_O0"
+"/testbench/u_SRAM_OT0"
+"/testbench/u_SRAM_K1"
+"/testbench/u_SRAM_000"
+"/testbench/u_SRAM_001"
+"/testbench/u_SRAM_OT1"
+"/testbench/u_SRAM_B00"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

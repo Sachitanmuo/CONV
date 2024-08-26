@@ -1,0 +1,2278 @@
+wvResizeWindow -win $_nWave1 1920 31 1920 1057
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 31 893 202
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvRestoreSignal -win $_nWave1 \
+           "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/signal.rc" \
+           -overWriteAutoAlias on -appendSignals on
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 2 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvSelectSignal -win $_nWave1 {( "G2" 1 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 1 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 2)}
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/dout_K0\[71:0\]} \
+{/testbench/u_conv/kernel_comb\[0:47\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 3 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/dout_K0\[71:0\]} \
+{/testbench/u_conv/kernel_comb\[0:47\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 3 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 3 4 )} 
+wvSetRadix -win $_nWave1 -format Bin
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/dout_K0\[71:0\]} \
+{/testbench/u_conv/kernel_comb\[0:47\]} \
+{/testbench/u_conv/kernel_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSelectSignal -win $_nWave1 {( "G1" 13 )} 
+wvSetPosition -win $_nWave1 {("G1" 13)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSetCursor -win $_nWave1 644.261838 -snap {("G2" 6)}
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvGoToTime -win $_nWave1 642
+wvSetCursor -win $_nWave1 50.457543 -snap {("G2" 5)}
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/dout_K0\[71:0\]} \
+{/testbench/u_conv/kernel_comb\[0:47\]} \
+{/testbench/u_conv/kernel_valid} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_SRAM_K1/addr\[10:0\]} \
+{/testbench/u_SRAM_K1/dout\[0:71\]} \
+{/testbench/u_SRAM_K1/memory\[1151:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 7 8 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/dout_K0\[71:0\]} \
+{/testbench/u_conv/kernel_comb\[0:47\]} \
+{/testbench/u_conv/kernel_valid} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_SRAM_K1/addr\[10:0\]} \
+{/testbench/u_SRAM_K1/dout\[0:71\]} \
+{/testbench/u_SRAM_K1/memory\[1151:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 7 8 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvExpandBus -win $_nWave1 {("G2" 9)}
+wvScrollUp -win $_nWave1 1132
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvCollapseBus -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetRadix -win $_nWave1 -format Bin
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/dout_K0\[71:0\]} \
+{/testbench/u_conv/kernel_comb\[0:47\]} \
+{/testbench/u_conv/kernel_valid} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_SRAM_K1/addr\[10:0\]} \
+{/testbench/u_SRAM_K1/dout\[0:71\]} \
+{/testbench/u_conv/addr_K\[10:0\]} \
+{/testbench/u_conv/addr_K_pre\[10:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 9 10 )} 
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/dout_K0\[71:0\]} \
+{/testbench/u_conv/kernel_comb\[0:47\]} \
+{/testbench/u_conv/kernel_valid} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_SRAM_K1/addr\[10:0\]} \
+{/testbench/u_SRAM_K1/dout\[0:71\]} \
+{/testbench/u_conv/addr_K\[10:0\]} \
+{/testbench/u_conv/addr_K_pre\[10:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 9 10 )} 
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 9 10 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetCursor -win $_nWave1 52.482074 -snap {("G2" 8)}
+wvSetCursor -win $_nWave1 53.416473 -snap {("G2" 8)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 51.391941 -snap {("G2" 5)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetCursor -win $_nWave1 60.424465 -snap {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvExpandBus -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 57)}
+wvScrollUp -win $_nWave1 13
+wvScrollUp -win $_nWave1 6
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvCollapseBus -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvExpandBus -win $_nWave1 {("G2" 9)}
+wvScrollUp -win $_nWave1 25
+wvSetCursor -win $_nWave1 51.080475 -snap {("G2" 10)}
+wvSelectSignal -win $_nWave1 {( "G2" 10 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetCursor -win $_nWave1 54.506605 -snap {("G2" 5)}
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvSetCursor -win $_nWave1 61.514597 -snap {("G2" 3)}
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvSetCursor -win $_nWave1 60.397760 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 59.775103 -snap {("G2" 8)}
+wvSetCursor -win $_nWave1 65.846011 -snap {("G2" 8)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 77.209507 -snap {("G2" 8)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvCollapseBus -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvExpandBus -win $_nWave1 {("G2" 9)}
+wvScrollDown -win $_nWave1 1
+wvSelectSignal -win $_nWave1 {( "G2" 56 )} 
+wvSetPosition -win $_nWave1 {("G2" 56)}
+wvExpandBus -win $_nWave1 {("G2" 56)}
+wvSetPosition -win $_nWave1 {("G2" 60)}
+wvScrollDown -win $_nWave1 2
+wvScrollDown -win $_nWave1 0
+wvSelectSignal -win $_nWave1 {( "G2" 60 )} 
+wvExpandBus -win $_nWave1 {("G2" 60)}
+wvScrollDown -win $_nWave1 1
+wvSetCursor -win $_nWave1 337.355735 -snap {("G2" 61)}
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvSetCursor -win $_nWave1 335.220038 -snap {("G2" 62)}
+wvSetCursor -win $_nWave1 337.245258 -snap {("G2" 62)}
+wvScrollUp -win $_nWave1 35
+wvSetCursor -win $_nWave1 342.074628 -snap {("G2" 7)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 34
+wvScrollUp -win $_nWave1 35
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvCollapseBus -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 3 4 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 5 6 7 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/bias_seq\[15:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/bias_seq\[15:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 366.221478 -snap {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetRadix -win $_nWave1 -format Bin
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 378.061223 -snap {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvExpandBus -win $_nWave1 {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetCursor -win $_nWave1 377.282293 -snap {("G2" 20)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 38605.048931 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 26321.624271 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 19940.624448
+wvSetCursor -win $_nWave1 56471.848437 -snap {("G2" 3)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 22971.599364 -snap {("G1" 8)}
+wvSetCursor -win $_nWave1 20738.249426 -snap {("G1" 8)}
+wvSetCursor -win $_nWave1 23450.174351 -snap {("G1" 8)}
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_conv/image_comb\[0\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[1\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[2\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[3\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[4\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[5\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[6\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[7\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[8\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[9\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[10\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[11\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[12\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[13\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[14\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[15\]\[0:2\]} \
+{/testbench/u_SRAM_000/memory\[3135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 21 )} 
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvSelectSignal -win $_nWave1 {( "G2" 20 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 21 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 20)}
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSetCursor -win $_nWave1 18823.949479 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 56790.898428 -snap {("G1" 3)}
+wvZoom -win $_nWave1 55514.698463 59343.298357
+wvZoom -win $_nWave1 57051.085642 57169.269272
+wvSetCursor -win $_nWave1 57089.773176
+wvSetCursor -win $_nWave1 57099.529901
+wvSetCursor -win $_nWave1 57099.784424 -snap {("G2" 5)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 93045.555529 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 49954.429906 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 53950.784298 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 57252.120536 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 80274.596927
+wvZoom -win $_nWave1 113374.836569 115720.522843
+wvSetCursor -win $_nWave1 114402.021513
+wvSetCursor -win $_nWave1 113927.158965 -snap {("G1" 15)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 139496.486478 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 139819.797149 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 171396.472674 -snap {("G1" 3)}
+wvZoom -win $_nWave1 170642.081109 173336.336700
+wvSetCursor -win $_nWave1 171585.940928 -snap {("G1" 1)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 192057.834899 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 200062.670993 -snap {("G1" 0)}
+wvSetCursor -win $_nWave1 200093.617216 -snap {("G1" 1)}
+wvZoomOut -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 228257.270089 -snap {("G2" 10)}
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 114313.274847 -snap {("G2" 10)}
+wvSetCursor -win $_nWave1 116912.757628 -snap {("G2" 8)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 13 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_conv/image_comb\[0\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[1\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[2\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[3\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[4\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[5\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[6\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[7\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[8\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[9\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[10\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[11\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[12\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[13\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[14\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[15\]\[0:2\]} \
+{/testbench/u_SRAM_000/memory\[3135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 21 )} 
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvGetSignalClose -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 19592.404882 -snap {("G2" 21)}
+wvSetCursor -win $_nWave1 57282.878679 -snap {("G2" 21)}
+wvSetCursor -win $_nWave1 86505.448672 -snap {("G2" 21)}
+wvSetCursor -win $_nWave1 114399.720029 -snap {("G2" 21)}
+wvSetCursor -win $_nWave1 133494.012922 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 151924.156497 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 171848.636037 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 200241.019383 -snap {("G2" 20)}
+wvSetCursor -win $_nWave1 212195.707107 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 209871.184494 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 21750.890165 -snap {("G1" 1)}
+wvSaveSignal -win $_nWave1 \
+           "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/signal.rc"
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 20)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvCollapseBus -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_SRAM_O0/memory\[6271:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_SRAM_O0/memory\[6271:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvGetSignalClose -win $_nWave1
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_SRAM_OT0/memory\[3135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_SRAM_OT0/memory\[3135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvGetSignalClose -win $_nWave1
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvExpandBus -win $_nWave1 {("G2" 4)}
+wvSetCursor -win $_nWave1 498.111989 -snap {("G2" 1)}
+wvZoom -win $_nWave1 0.000000 1826.410625
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_conv/image_comb\[0\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[1\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[2\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[3\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[4\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[5\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[6\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[7\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[8\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[9\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[10\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[11\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[12\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[13\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[14\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[15\]\[0:2\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 21 )} 
+wvSetPosition -win $_nWave1 {("G2" 21)}
+wvSetPosition -win $_nWave1 {("G2" 22)}
+wvSetPosition -win $_nWave1 {("G2" 22)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_conv/image_comb\[0\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[1\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[2\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[3\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[4\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[5\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[6\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[7\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[8\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[9\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[10\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[11\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[12\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[13\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[14\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[15\]\[0:2\]} \
+{/testbench/u_conv/image_valid} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 22 )} 
+wvSetPosition -win $_nWave1 {("G2" 22)}
+wvSetPosition -win $_nWave1 {("G2" 22)}
+wvSetPosition -win $_nWave1 {("G2" 22)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_comb\[0:15\]} \
+{/testbench/u_conv/image_comb\[0\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[1\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[2\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[3\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[4\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[5\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[6\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[7\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[8\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[9\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[10\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[11\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[12\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[13\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[14\]\[0:2\]} \
+{/testbench/u_conv/image_comb\[15\]\[0:2\]} \
+{/testbench/u_conv/image_valid} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 22 )} 
+wvSetPosition -win $_nWave1 {("G2" 22)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvCollapseBus -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetCursor -win $_nWave1 372.362252 -snap {("G2" 5)}
+wvZoom -win $_nWave1 360.562040 397.273811
+wvSelectSignal -win $_nWave1 {( "G2" 1 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvExpandBus -win $_nWave1 {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvExpandBus -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 23)}
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvExpandBus -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 26)}
+wvSelectSignal -win $_nWave1 {( "G2" 13 )} 
+wvSetPosition -win $_nWave1 {("G2" 13)}
+wvExpandBus -win $_nWave1 {("G2" 13)}
+wvSetPosition -win $_nWave1 {("G2" 29)}
+wvSelectSignal -win $_nWave1 {( "G2" 12 )} 
+wvSetPosition -win $_nWave1 {("G2" 12)}
+wvExpandBus -win $_nWave1 {("G2" 12)}
+wvSetPosition -win $_nWave1 {("G2" 32)}
+wvSelectSignal -win $_nWave1 {( "G2" 12 )} 
+wvSetPosition -win $_nWave1 {("G2" 12)}
+wvCollapseBus -win $_nWave1 {("G2" 12)}
+wvSetPosition -win $_nWave1 {("G2" 12)}
+wvSetPosition -win $_nWave1 {("G2" 29)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvCollapseBus -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvExpandBus -win $_nWave1 {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvCollapseBus -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvGetSignalClose -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/mul_seq\[13:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/mul_seq\[13:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvExpandBus -win $_nWave1 {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvCollapseBus -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetCursor -win $_nWave1 375.004287 -snap {("G2" 7)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 377.705620 -snap {("G1" 1)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvGetSignalOpen -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvGetSignalOpen -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 1 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_SRAM_O0/memory\[6271:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_SRAM_O0/memory\[6271:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvGetSignalClose -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 1)}
+wvSetPosition -win $_nWave1 {("G3" 1)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 38213.554145 -snap {("G2" 7)}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvExpandBus -win $_nWave1 {("G2" 7)}
+wvScrollDown -win $_nWave1 2
+wvScrollUp -win $_nWave1 1041
+wvScrollUp -win $_nWave1 709
+wvScrollUp -win $_nWave1 935
+wvScrollUp -win $_nWave1 756
+wvScrollDown -win $_nWave1 404
+wvScrollUp -win $_nWave1 79
+wvSelectSignal -win $_nWave1 {( "G2" 3141 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 3142 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 3143 )} 
+wvScrollUp -win $_nWave1 3136
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvCollapseBus -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvZoom -win $_nWave1 36702.283642 41991.730402
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSetRadix -win $_nWave1 -2Com
+wvZoom -win $_nWave1 38069.261987 38304.686035
+wvSetCursor -win $_nWave1 38210.043201 -snap {("G2" 6)}
+wvSetCursor -win $_nWave1 10353.537412 -snap {("G1" 15)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G3" 0)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+{/testbench/u_SRAM_OT0/memory\[3135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+{/testbench/u_SRAM_OT0/memory\[3135:0\]} \
+{/testbench/u_SRAM_OT1/memory\[3135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+{/testbench/u_SRAM_OT0/memory\[3135:0\]} \
+{/testbench/u_SRAM_OT1/memory\[3135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 18111.465683 -snap {("G2" 7)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 44658.356599 -snap {("G2" 8)}
+wvSetCursor -win $_nWave1 37406.643046 -snap {("G2" 8)}
+wvSetCursor -win $_nWave1 37709.500113 -snap {("G2" 7)}
+wvSetCursor -win $_nWave1 38607.254990 -snap {("G2" 7)}
+wvSaveSignal -win $_nWave1 \
+           "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/signal.rc"
+wvSelectSignal -win $_nWave1 {( "G2" 7 8 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G4" 0)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvExpandBus -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 22)}
+wvSelectSignal -win $_nWave1 {( "G2" 21 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT1"
+wvSetCursor -win $_nWave1 335.306038 -snap {("G2" 3)}
+wvSetCursor -win $_nWave1 378.571334 -snap {("G2" 3)}
+wvZoom -win $_nWave1 270.408096 454.285601
+wvZoom -win $_nWave1 383.137018 388.681064
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetRadix -win $_nWave1 -format Bin
+wvSetRadix -win $_nWave1 -Unsigned
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvExpandBus -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 25)}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvExpandBus -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 28)}
+wvSelectSignal -win $_nWave1 {( "G2" 10 )} 
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvExpandBus -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 37)}
+wvSelectSignal -win $_nWave1 {( "G2" 10 )} 
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvCollapseBus -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 28)}
+wvSetCursor -win $_nWave1 375.640816 -snap {("G2" 28)}
+wvSetCursor -win $_nWave1 383.919074 -snap {("G2" 9)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetCursor -win $_nWave1 390.032250 -snap {("G2" 17)}
+wvSetCursor -win $_nWave1 396.081747 -snap {("G2" 17)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvExpandBus -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 31)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 32)}
+wvSetPosition -win $_nWave1 {("G2" 32)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/image_seq\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[3\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[4\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[5\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[6\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[7\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[8\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[9\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[10\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[11\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[12\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[13\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[14\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[15\]\[0:2\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 32 )} 
+wvSetPosition -win $_nWave1 {("G2" 32)}
+wvSetPosition -win $_nWave1 {("G2" 32)}
+wvSetPosition -win $_nWave1 {("G2" 32)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/image_seq\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[3\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[4\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[5\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[6\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[7\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[8\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[9\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[10\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[11\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[12\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[13\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[14\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[15\]\[0:2\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 32 )} 
+wvSetPosition -win $_nWave1 {("G2" 32)}
+wvGetSignalClose -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvSetPosition -win $_nWave1 {("G2" 1)}
+wvSetPosition -win $_nWave1 {("G2" 0)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 0)}
+wvSetPosition -win $_nWave1 {("G2" 1)}
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvSelectSignal -win $_nWave1 {( "G2" 1 )} 
+wvSetRadix -win $_nWave1 -format Bin
+wvSetCursor -win $_nWave1 384.301148 -snap {("G2" 2)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/SRAM_I000"
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_001"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_K1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_O0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT0"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_OT1"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_conv"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_SRAM_000"
+wvSetPosition -win $_nWave1 {("G2" 2)}
+wvSetPosition -win $_nWave1 {("G2" 2)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+{/testbench/u_SRAM_000/addr\[11:0\]} \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/image_seq\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[3\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[4\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[5\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[6\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[7\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[8\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[9\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[10\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[11\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[12\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[13\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[14\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[15\]\[0:2\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 2 )} 
+wvSetPosition -win $_nWave1 {("G2" 2)}
+wvSetPosition -win $_nWave1 {("G2" 2)}
+wvSetPosition -win $_nWave1 {("G2" 2)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+{/testbench/u_SRAM_000/addr\[11:0\]} \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_conv/image_seq\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[0\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[0\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[1\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[1\]\[2\]\[8:0\]} \
+{/testbench/u_conv/image_seq\[0\]\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[1\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[2\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[3\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[4\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[5\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[6\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[7\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[8\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[9\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[10\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[11\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[12\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[13\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[14\]\[0:2\]} \
+{/testbench/u_conv/image_seq\[15\]\[0:2\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 2 )} 
+wvSetPosition -win $_nWave1 {("G2" 2)}
+wvGetSignalClose -win $_nWave1
+wvScrollUp -win $_nWave1 2
+wvSelectSignal -win $_nWave1 {( "G2" 2 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvResizeWindow -win $_nWave1 1920 27 1920 1057
+wvSetCursor -win $_nWave1 390.228114 -snap {("G2" 5)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvCollapseBus -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+{/testbench/u_SRAM_000/addr\[11:0\]} \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_SRAM_B00/memory\[55:0\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+{/testbench/u_SRAM_000/addr\[11:0\]} \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/image_seq\[0:15\]} \
+{/testbench/u_SRAM_B00/memory\[55:0\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvExpandBus -win $_nWave1 {("G2" 7)}
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 12
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvCollapseBus -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvExpandBus -win $_nWave1 {("G2" 6)}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvExpandBus -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 25)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetCursor -win $_nWave1 384.034543 -snap {("G2" 9)}
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvExpandBus -win $_nWave1 {("G2" 11)}
+wvSetPosition -win $_nWave1 {("G2" 28)}
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvCollapseBus -win $_nWave1 {("G2" 11)}
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvSetPosition -win $_nWave1 {("G2" 25)}
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvExpandBus -win $_nWave1 {("G2" 11)}
+wvSetPosition -win $_nWave1 {("G2" 28)}
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvCollapseBus -win $_nWave1 {("G2" 11)}
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvSetPosition -win $_nWave1 {("G2" 25)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvExpandBus -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 28)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvCollapseBus -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 25)}
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvExpandBus -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 28)}
+wvSelectSignal -win $_nWave1 {( "G2" 10 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvExpandBus -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 31)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvCollapseBus -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 28)}
+wvSelectSignal -win $_nWave1 {( "G2" 10 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 13 )} 
+wvSetPosition -win $_nWave1 {("G2" 13)}
+wvExpandBus -win $_nWave1 {("G2" 13)}
+wvSetPosition -win $_nWave1 {("G2" 31)}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvExpandBus -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 34)}
+wvSelectSignal -win $_nWave1 {( "G2" 10 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvCollapseBus -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+{/testbench/u_SRAM_000/addr\[11:0\]} \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/addr_00\[11:0\]} \
+{/testbench/u_conv/addr_01\[11:0\]} \
+{/testbench/u_conv/addr_10\[11:0\]} \
+{/testbench/u_conv/addr_11\[11:0\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 7 8 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_conv/clk} \
+{/testbench/u_conv/epoch_counter_seq\[5:0\]} \
+{/testbench/u_conv/mem_epoch_seq\[5:0\]} \
+{/testbench/u_conv/out_data\[15:0\]} \
+{/testbench/u_conv/dout_OT0\[24:0\]} \
+{/testbench/u_conv/dout_OT1\[24:0\]} \
+{/testbench/u_conv/din_OT0\[24:0\]} \
+{/testbench/u_conv/din_OT1\[24:0\]} \
+{/testbench/u_conv/we_OT0} \
+{/testbench/u_conv/we_OT1} \
+{/testbench/u_conv/we_O0} \
+{/testbench/u_conv/we_O1} \
+{/testbench/u_conv/out_data_pre\[15:0\]} \
+{/testbench/u_conv/addr_OT0\[11:0\]} \
+{/testbench/u_conv/addr_OT1\[11:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_SRAM_000/dout\[0:128\]} \
+{/testbench/u_SRAM_000/addr\[11:0\]} \
+{/testbench/u_conv/x_counter_seq\[7:0\]} \
+{/testbench/u_conv/y_counter_seq\[7:0\]} \
+{/testbench/u_conv/counter_seq\[15:0\]} \
+{/testbench/u_conv/addr_00\[11:0\]} \
+{/testbench/u_conv/addr_01\[11:0\]} \
+{/testbench/u_conv/addr_10\[11:0\]} \
+{/testbench/u_conv/addr_11\[11:0\]} \
+{/testbench/u_conv/mac_16_seq\[24:0\]} \
+{/testbench/u_conv/image_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvAddSignal -win $_nWave1 -group {"G4" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 7 8 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 6 7 8 9 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetCursor -win $_nWave1 390.467286 -snap {("G2" 9)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 6 7 8 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 10)}
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvSetCursor -win $_nWave1 708.378498 -snap {("G2" 11)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvSetCursor -win $_nWave1 705.721560 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 701.957450 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 690.232026 -snap {("G1" 1)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 695.900482 -snap {("G2" 9)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetCursor -win $_nWave1 702.779057 -snap {("G2" 11)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 707.810608 -snap {("G2" 9)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 738.063604 -snap {("G2" 9)}
+wvSetCursor -win $_nWave1 714.307041 -snap {("G2" 9)}
+wvSetCursor -win $_nWave1 708.192751 -snap {("G2" 9)}
+wvSetCursor -win $_nWave1 714.179660 -snap {("G2" 10)}
+wvSetCursor -win $_nWave1 714.243350 -snap {("G2" 9)}
+wvSetCursor -win $_nWave1 708.829657 -snap {("G2" 9)}
+wvSaveSignal -win $_nWave1 \
+           "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/signal.rc"
+wvExit
