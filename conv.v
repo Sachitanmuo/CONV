@@ -12,6 +12,7 @@
 `define BIT_PER_WORD_O 16
 
 /*
+to-do list
 s = 2
 s = 1
 1st layer
