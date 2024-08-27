@@ -331,12 +331,12 @@ ColorPrint = FALSE
 [QtDialog]
 tipViewerDlg = 751,371,398,259
 unknownSave = 80,78,461,245
-QwWarnMsgDlg = 434,330,600,250
 openFileDlg = 2579,303,602,505
-restoreSigDlg = 2604,336,551,438
-qWaveSignalDialog = 2464,367,800,579
-QwUserAskDlg = 86,109,324,148
+QwWarnMsgDlg = 434,330,600,250
 saveSigDlg = 2604,362,551,386
+QwUserAskDlg = 3053,405,324,110
+qWaveSignalDialog = 2480,266,800,579
+restoreSigDlg = 2604,336,551,438
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -562,7 +562,7 @@ maskFsaRegRule = TRUE
 maskFsaCoreRule = TRUE
 maskFsaSfsmRule = TRUE
 maskFsaEcrRule = TRUE
-getSignalForm = 2464 367 800 579 164 481 390 114
+getSignalForm = 2480 266 800 579 164 481 390 114
 viewPort = 1920 27 1920 1057 294 229
 signalSpacing = 5
 digitalSignalHeight = 15

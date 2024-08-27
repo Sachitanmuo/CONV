@@ -1,4 +1,3 @@
-
 `define WORD_AMOUNT			56
 `define BIT_PER_WORD		129
 

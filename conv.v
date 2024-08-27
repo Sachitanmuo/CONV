@@ -8,7 +8,7 @@
 `define BIT_PER_WORD_K 72
 `define BIT_PER_WORD_B 128//bottom
 `define BIT_PER_WORD_BIAS 16
-`define BIT_PER_WORD_OT 25 //to be modified...
+`define BIT_PER_WORD_OT 26 //to be modified...
 `define BIT_PER_WORD_O 16
 
 /*
@@ -103,7 +103,9 @@ module conv(
 	din_O1
 );
 
-reg debug, debug0, debug1, debug2;
+reg [7:0] debug, debug0, debug1, debug2;
+
+
 
 //to change the scale of the layer
 parameter input_image_size = 'd112;
@@ -412,8 +414,8 @@ begin
 		we_K <= we_K_pre;
 		we_O0 <= we_O0_pre;
 		we_O1 <= we_O1_pre;
-		we_B0 <= we_B0_pre;
-		we_B1 <= we_B1_pre;
+		//we_B0 <= we_B0_pre;
+		//we_B1 <= we_B1_pre;
 		we_BIAS <= we_BIAS_pre;
 		we_K <= we_K_pre;
 		we_OT0 <= we_OT0_pre;
@@ -423,10 +425,10 @@ begin
 		//addr_01 <= addr_01_pre;
 		//addr_10 <= addr_10_pre;
 		//addr_11 <= addr_11_pre;
-		addr_B00 <= addr_B00_pre;
-		addr_B01 <= addr_B01_pre;
-		addr_B10 <= addr_B10_pre;
-		addr_B11 <= addr_B11_pre;
+		//addr_B00 <= addr_B00_pre;
+		//addr_B01 <= addr_B01_pre;
+		//addr_B10 <= addr_B10_pre;
+		//addr_B11 <= addr_B11_pre;
 		addr_K <= addr_K_pre;
 		addr_BIAS <= addr_BIAS_pre;
 		addr_OT0 <= addr_OT0_pre;
@@ -436,10 +438,10 @@ begin
 
 		counter_seq <= counter_comb;
 
-		din_B00 <= din_B00_pre;
-		din_B01 <= din_B01_pre;
-		din_B10 <= din_B10_pre;
-		din_B11 <= din_B11_pre;
+		//din_B00 <= din_B00_pre;
+		//din_B01 <= din_B01_pre;
+		//din_B10 <= din_B10_pre;
+		//din_B11 <= din_B11_pre;
 
 		din_OT0 <= din_OT0_pre;
 		din_OT1 <= din_OT1_pre;
@@ -578,14 +580,14 @@ begin
 	addr_B01_pre = 0;
 	addr_B10_pre = 0;
 	addr_B11_pre = 0;
-	we_B0_pre = !y_counter_comb[0];
-	we_B1_pre = y_counter_comb[0];
+	we_B0 = !y_counter_comb[0];
+	we_B1 = y_counter_comb[0];
 	final_flag_pre = final_flag;
 	output_counter_comb = output_counter_seq;
-	din_B00_pre = 0;
-	din_B01_pre = 0;
-	din_B10_pre = 0;
-	din_B11_pre = 0;
+	din_B00 = 0;
+	din_B01 = 0;
+	din_B10 = 0;
+	din_B11 = 0;
 
 	case(cur_state)
 	IDLE:
@@ -771,13 +773,13 @@ begin
 
 			if(!mem_epoch_seq[0])
 			begin
-				din_B00_pre = dout_010;
-				din_B01_pre = dout_011;
+				din_B00 = dout_010;
+				din_B01 = dout_011;
 			end
 			else
 			begin
-				din_B00_pre = dout_110;
-				din_B01_pre = dout_111;
+				din_B00 = dout_110;
+				din_B01 = dout_111;
 			end
 
 			for(i=0;i<input_sram_size;i=i+1)
@@ -853,19 +855,24 @@ begin
 		if(cal_en_counter_seq < 3)
 		begin
 			cal_en_counter_comb = cal_en_counter_seq + 1;
+			addr_B00 = 0;
+			addr_B01 = 0;
+			addr_B10 = 0;
+			addr_B11 = 0;
+
 		end
 		if((x_counter_seq == output_image_size - 1) && ((y_counter_seq == 0) || (y_counter_seq == 1)))//to avoid mem == x
 		begin
 			cal_en_counter_comb = 0;
 		end
-		if(cal_en_counter_seq == 0)
-		begin
-			we_B0_pre = !we_B0;
-			we_B1_pre = !we_B1;
-		end
+		//if(cal_en_counter_seq == 0)
+		//begin
+		//	we_B0_pre = !we_B0;
+		//	we_B1_pre = !we_B1;
+		//end
 
-if(cal_en_counter_seq > 2)//superior
-begin
+	if(cal_en_counter_seq > 2)//superior
+	begin
 		//counter part
 		if(counter_seq < output_image_size * output_image_size - 1)
 		begin
@@ -923,10 +930,15 @@ begin
 			addr_11 = 0;
 		end
 
-		addr_B00_pre = x_counter_seq; //- 1;//看你image_seq落後x多少cycle
-		addr_B01_pre = x_counter_seq; //- 1;//看你image_seq落後x多少cycle
-		addr_B10_pre = x_counter_seq; //- 1;//看你image_seq落後x多少cycle
-		addr_B11_pre = x_counter_seq; //- 1;//看你image_seq落後x多少cycle
+		addr_B00 = x_counter_seq +  y_counter_seq[0]; 
+		addr_B01 = x_counter_seq +  y_counter_seq[0]; 
+		addr_B10 = x_counter_seq + !y_counter_seq[0]; 
+		addr_B11 = x_counter_seq + !y_counter_seq[0]; 
+		/* ------- 8/27 update --------------------
+		因為 read 是用當前cycle的address
+		write 是用上一個cycle的address
+		所以address用來write時要+1
+		-----------------------------------------*/
 
 		
 		if(!mem_epoch_seq[0])
@@ -1069,6 +1081,7 @@ begin
 			image_comb[14][2][2] = dout_111[15:8];
 			image_comb[15][2][2] = dout_111[7:0];
 		end
+	end
 
 		//bottom
 		case(x_counter_seq)
@@ -1076,13 +1089,13 @@ begin
 		begin
 			if(!mem_epoch_seq[0])
 			begin
-				din_B00_pre = dout_010;
-				din_B01_pre = dout_011;
+				din_B00 = dout_010;
+				din_B01 = dout_011;
 			end
 			else
 			begin
-				din_B00_pre = dout_110;
-				din_B01_pre = dout_111;
+				din_B00 = dout_110;
+				din_B01 = dout_111;
 			end
 
 			if(y_counter_seq == 0)
@@ -1154,13 +1167,13 @@ begin
 			begin
 				if(!mem_epoch_seq[0])
 				begin
-					din_B00_pre = dout_010;
-					din_B01_pre = dout_011;
+					din_B00 = dout_010;
+					din_B01 = dout_011;
 				end
 				else
 				begin
-					din_B00_pre = dout_110;
-					din_B01_pre = dout_111;
+					din_B00 = dout_110;
+					din_B01 = dout_111;
 				end
 
 				for(i=0;i<input_sram_size;i=i+1)
@@ -1208,18 +1221,18 @@ begin
 
 		default://x_counter_seq >= 1
 		begin
-			debug = 0;
+			debug = 10;
 			if(y_counter_seq == 0)
 			begin
 				if(!mem_epoch_seq[0])
 				begin
-					din_B00_pre = dout_010;
-					din_B01_pre = dout_011;
+					din_B00 = dout_010;
+					din_B01 = dout_011;
 				end
 				else
 				begin
-					din_B00_pre = dout_110;
-					din_B01_pre = dout_111;
+					din_B00 = dout_110;
+					din_B01 = dout_111;
 				end
 				for(i=0;i<input_sram_size;i++)
 				begin
@@ -1297,13 +1310,13 @@ begin
 
 				if(!mem_epoch_seq[0])
 				begin
-					din_B00_pre = dout_010;
-					din_B01_pre = dout_011;
+					din_B00 = dout_010;
+					din_B01 = dout_011;
 				end
 				else
 				begin
-					din_B00_pre = dout_110;
-					din_B01_pre = dout_111;
+					din_B00 = dout_110;
+					din_B01 = dout_111;
 				end
 
 				image_comb[0][0][1] = dout_B10[127:120];
@@ -1407,7 +1420,7 @@ begin
 				final_flag_pre = 1;
 			end
 		end
-end
+//end
 	end
 
 	OUT:
@@ -1517,4 +1530,5 @@ begin
 end
 //ReLU
 
+assign debug0 = image_comb[0][2][2];
 endmodule

@@ -1,6 +1,6 @@
 
 `define WORD_AMOUNT			3136
-`define BIT_PER_WORD		25
+`define BIT_PER_WORD		26
 
 module SRAM_OT (
 	input 								clk,

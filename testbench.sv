@@ -9,7 +9,7 @@
 `define BIT_PER_WORD_I 128
 `define BIT_PER_WORD_K 72
 `define BIT_PER_WORD_B 128
-`define BIT_PER_WORD_OT 25
+`define BIT_PER_WORD_OT 26
 `define BIT_PER_WORD_O 16
 `define BIT_PER_WORD_BIAS 16 // bias 改為16 bit 了
 
