@@ -1,4 +1,3 @@
-Command Line: /usr/cad/synopsys/verdi/cur/platform/LINUXAMD64/bin/Novas
-uname(Linux cad46 3.10.0-1160.62.1.el7.x86_64 #1 SMP Tue Apr 5 16:57:59 UTC 2022 x86_64)
-Failure on Verdi 3-tier licensing, Use verdi -licdebug for more information.
-au time 58.346030 2.743783 0.407409 delta 322420736 322420736 total 812544000 812544000
+Command Line: /usr/cad/synopsys/verdi/2019.06/platform/LINUXAMD64/bin/Novas
+uname(Linux ee21 3.10.0-1160.88.1.el7.x86_64 #1 SMP Tue Mar 7 15:41:52 UTC 2023 x86_64)
+au time 603.599180 9.005792 7.322042 delta 490991616 490991616 total 926044160 926044160

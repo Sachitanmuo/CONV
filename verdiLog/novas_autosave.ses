@@ -4,14 +4,14 @@ saveDB = TRUE
 relativePath = FALSE
 saveSingleView = FALSE
 saveNWaveWinId = 
-VerdiVersion = Verdi_S-2021.09
+VerdiVersion = Verdi_P-2019.06
 [KeyNote]
 Line1 = Automatic Backup 0
 Line2 = Save Open Database Information: Yes
 Line3 = Path Option: Absolute Paths
 Line4 = Windows Option: All Windows
 [OneSearch]
-isExisted = TRUE
+isExisted = FALSE
 [TestBench]
 ConstrViewShow = 0
 InherViewShow = 0
@@ -19,15 +19,10 @@ FSDBMsgShow = 0
 AnnotationShow = 0
 Console = FALSE
 powerDumped = 0
-[fusa]
-fdb_server = 
-fdb_proj = 
-fdb_campaign = 
-fdb_tool = 
 [hb]
-postSimFile = /home/IMGAE_INT/QARep_VGG/conv_3x3/conv.fsdb
-syncTime = 0
-viewport = 0 23 1536 801 0 0 280 1534
+postSimFile = /RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb
+syncTime = 2436
+viewport = 0 23 1536 801 0 0 278 1534
 interactiveMode = False
 viewType = Source
 simulatorMode = False
@@ -42,22 +37,22 @@ showTraceInSchema = True
 paMode = False
 funcMode = False
 powerAwareAnnot = True
-safetyAwareAnnot = True
 amsAnnot = True
+traceCrossHier = True
 DnDtraceCrossHierOnly = True
+traceIncTopPort = False
 leadingZero = False
 signalPane = False
-SourceVerticalScrollLines = 5
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [nMemoryManager]
-WaveformFile = /home/IMGAE_INT/QARep_VGG/conv_3x3/conv.fsdb
+WaveformFile = /RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1536 698 100 65
+viewPort = 0 27 1536 696 219 65
 primaryWindow = TRUE
-SessionFile = /home/IMGAE_INT/QARep_VGG/conv_3x3/verdiLog/novas_autosave.ses.wave.0
+SessionFile = /RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
 hierarchicalName = FALSE
 snap = TRUE
@@ -75,7 +70,3 @@ showMsgDescriptions = TRUE
 autoFit = FALSE
 displayDeltaY = FALSE
 centerCursor = FALSE
-fsaRegMask = TRUE
-fsaCoreMask = TRUE
-fsaSfsmMask = TRUE
-fsaEcrMask = TRUE

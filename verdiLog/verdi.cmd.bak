@@ -1,0 +1,16 @@
+wvCreateWindow
+verdiDockWidgetMaximize -dock windowDock_nWave_2
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb}
+wvGetSignalOpen -win $_nWave2
+wvGetSignalSetScope -win $_nWave2 "/SRAM_I000"
+wvCreateWindow
+wvGetSignalOpen -win $_nWave2
+wvGetSignalSetScope -win $_nWave2 "/testbench"
+wvGetSignalOpen -win $_nWave2
+wvGetSignalSetScope -win $_nWave2 "/testbench"
+wvGetSignalSetScope -win $_nWave2 "/SRAM_I100"
+wvGetSignalSetScope -win $_nWave2 "/testbench"
+debExit

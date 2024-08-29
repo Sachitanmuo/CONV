@@ -1,12 +1,12 @@
 Magic 271485
-Revision Verdi_S-2021.09
+Revision Verdi_P-2019.06
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1536 698 100 65
+viewPort 0 27 1536 696 219 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/IMGAE_INT/QARep_VGG/conv_3x3/conv.fsdb"
+openDirFile -d / "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 18695.100000
-cursor 0.000000
+zoom 2430.315567 2483.358474
+cursor 2436.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 0
+markerPos 8
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,19 +46,33 @@ curSTATUS ByChange
 
 
 addGroup "G1"
+activeDirFile "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
+addSignal -h 15 /testbench/u_conv/addr_OT0[11:0]
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope counter_seq[15:0]
+addSignal -h 15 -2COMP -UDEC -holdScope mac_16_seq[24:0]
+addSignal -h 15 -holdScope x_counter_seq[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope y_counter_seq[7:0]
+addSignal -h 15 -2COMP -UDEC -holdScope din_OT0[25:0]
+addSignal -h 15 -2COMP -UDEC /testbench/u_SRAM_OT0/memory[3135:0]
+addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm
-activeDirFile "" "/home/IMGAE_INT/QARep_VGG/conv_3x3/conv.fsdb"
+activeDirFile "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
 
 GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
+"/SRAM_I000"
 "/testbench"
-"/testbench/conv_inst"
+"/testbench/u_SRAM_OT0"
+"/testbench/u_conv"
 
 SCOPE_LIST_BEGIN
+"/SRAM_I000"
 "/testbench"
+"/testbench/u_conv"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END

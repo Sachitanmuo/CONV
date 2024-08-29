@@ -219,6 +219,10 @@ integer i,j,k,l;
 reg signed [9:0] d00,d01,d10,d11;
 //debug
 
+//flag
+reg image_unlock_flag_seq,image_unlock_flag_comb;
+//flag
+
 //seq with for loop
 always@(posedge clk or negedge rst_n)
 begin
@@ -354,10 +358,10 @@ begin
 		addr_01 <= 0;
 		addr_10 <= 0;
 		addr_11 <= 0;
-		addr_B00 <= 0;
-		addr_B01 <= 0;
-		addr_B10 <= 0;
-		addr_B11 <= 0;
+		//addr_B00 <= 0;
+		//addr_B01 <= 0;
+		//addr_B10 <= 0;
+		//addr_B11 <= 0;
 		addr_K <= 0;
 		addr_BIAS <= 0;
 		addr_OT0 <= 0;
@@ -372,8 +376,8 @@ begin
 		din_B10 <= 0;
 		din_B11 <= 0;
 
-		din_OT0 <= 0;
-		din_OT1 <= 0;
+		//din_OT0 <= 0;
+		//din_OT1 <= 0;
 
 		din_O0 <= 0;
 		din_O1 <= 0;
@@ -388,6 +392,8 @@ begin
 		epoch_counter_seq <= 0;
 		cal_en_counter_seq <= 0;
 		final_flag <= 0;
+
+		image_unlock_flag_seq <= 0;
 	end
 	
 	else
@@ -443,8 +449,8 @@ begin
 		//din_B10 <= din_B10_pre;
 		//din_B11 <= din_B11_pre;
 
-		din_OT0 <= din_OT0_pre;
-		din_OT1 <= din_OT1_pre;
+		//din_OT0 <= din_OT0_pre;
+		//din_OT1 <= din_OT1_pre;
 
 		din_O0 <= din_O0_pre;
 		din_O1 <= din_O1_pre;
@@ -459,6 +465,8 @@ begin
 		epoch_counter_seq <= epoch_counter_comb;
 		cal_en_counter_seq <= cal_en_counter_comb;
 		final_flag <= final_flag_pre;
+
+		image_unlock_flag_seq <= image_unlock_flag_comb;
 	end
 end
 //seq without for loop
@@ -576,10 +584,10 @@ begin
 	//addr_01_pre = 0;
 	//addr_10_pre = 0;
 	//addr_11_pre = 0;
-	addr_B00_pre = 0;
-	addr_B01_pre = 0;
-	addr_B10_pre = 0;
-	addr_B11_pre = 0;
+	addr_B00 = 0;
+	addr_B01 = 0;
+	addr_B10 = 0;
+	addr_B11 = 0;
 	we_B0 = !y_counter_comb[0];
 	we_B1 = y_counter_comb[0];
 	final_flag_pre = final_flag;
@@ -588,6 +596,7 @@ begin
 	din_B01 = 0;
 	din_B10 = 0;
 	din_B11 = 0;
+	image_unlock_flag_comb = image_unlock_flag_seq;
 
 	case(cur_state)
 	IDLE:
@@ -609,9 +618,10 @@ begin
 		addr_11 = 0;
 
 		
-		
-		if(!mem_epoch_seq[0])
+		if(image_valid)
 		begin
+			if(!mem_epoch_seq[0])
+			begin
 			image_comb[0][1][1] = dout_000[127:120];
 			image_comb[1][1][1] = dout_000[119:112];
 			image_comb[2][1][1] = dout_000[111:104];
@@ -679,9 +689,9 @@ begin
 			image_comb[13][2][2] = dout_011[23:16];
 			image_comb[14][2][2] = dout_011[15:8];
 			image_comb[15][2][2] = dout_011[7:0];
-		end
-		else
-		begin
+			end
+			else
+			begin
 			image_comb[0][1][1] = dout_100[127:120];
 			image_comb[1][1][1] = dout_100[119:112];
 			image_comb[2][1][1] = dout_100[111:104];
@@ -749,6 +759,7 @@ begin
 			image_comb[13][2][2] = dout_111[23:16];
 			image_comb[14][2][2] = dout_111[15:8];
 			image_comb[15][2][2] = dout_111[7:0];
+			end
 		end
 
 		if(image_valid)
@@ -764,10 +775,10 @@ begin
 			addr_11 = 0;
 			
 			we_I_pre = 0;
-			addr_B00_pre = 0;
-			addr_B01_pre = 0;
-			addr_B10_pre = 0;
-			addr_B11_pre = 0;
+			addr_B00 = 0;
+			addr_B01 = 0;
+			addr_B10 = 0;
+			addr_B11 = 0;
 			counter_comb = 0;
 			
 
@@ -802,6 +813,11 @@ begin
 		x_counter_comb = 0;
 		y_counter_comb = 0;
 		cal_en_counter_comb = 3;
+
+		if(bias_valid)
+		begin
+			image_unlock_flag_comb = 1;
+		end
 	end
 
 	KERNEL:
@@ -861,7 +877,8 @@ begin
 			addr_B11 = 0;
 
 		end
-		if((x_counter_seq == output_image_size - 1) && ((y_counter_seq == 0) || (y_counter_seq == 1)))//to avoid mem == x
+		//if((x_counter_seq == output_image_size - 1) && ((y_counter_seq == 0) || (y_counter_seq == 1)))//to avoid mem == x
+		if((x_counter_seq == output_image_size - 1))
 		begin
 			cal_en_counter_comb = 0;
 		end
@@ -874,7 +891,7 @@ begin
 	if(cal_en_counter_seq > 2)//superior
 	begin
 		//counter part
-		if(counter_seq < output_image_size * output_image_size - 1)
+		if(counter_seq < output_image_size * output_image_size + 4)//because of pipeline
 		begin
 			counter_comb = counter_seq + 1;
 		end
@@ -1120,13 +1137,13 @@ begin
 				end
 				if(!mem_epoch_seq[0])
 				begin
-					din_B10_pre = dout_010;
-					din_B11_pre = dout_011;
+					din_B10 = dout_010;
+					din_B11 = dout_011;
 				end
 				else
 				begin
-					din_B10_pre = dout_110;
-					din_B11_pre = dout_111;
+					din_B10 = dout_110;
+					din_B11 = dout_111;
 				end
 
 				image_comb[0][0][1] = dout_B00[127:120];
@@ -1255,13 +1272,13 @@ begin
 
 				if(!mem_epoch_seq[0])
 				begin
-					din_B10_pre = dout_010;
-					din_B11_pre = dout_011;
+					din_B10 = dout_010;
+					din_B11 = dout_011;
 				end
 				else
 				begin
-					din_B10_pre = dout_110;
-					din_B11_pre = dout_111;
+					din_B10 = dout_110;
+					din_B11 = dout_111;
 				end
 
 				image_comb[0][0][1] = dout_B00[127:120];
@@ -1375,39 +1392,40 @@ begin
 			end
 		end
 
-		if(x_counter_seq > 2)//might be wrong
+		//if(x_counter_seq > 2)//might be wrong
+		if(counter_seq > 2)
 		begin
 			mem_counter_comb = mem_counter_seq + 1;
 
 			if(mem_epoch_seq == 0)
 			begin
-				addr_OT0_pre = mem_counter_seq;
+				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
 				//num_to_mem_comb = mac_16_seq;
-				din_OT0_pre = mac_16_seq;
+				din_OT0 = mac_16_seq;
 			end
 			else if(mem_epoch_seq == mem_epoch)//last mem epoch
 			begin
-				addr_OT0_pre = mem_counter_seq;
-				addr_OT1_pre = mem_counter_seq;
+				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
+				addr_OT1_pre = counter_seq - 3; //mem_counter_seq;
 				//num_from_mem_comb = dout_OT1;
 				//num_to_mem_comb = num_from_mem_seq + mac_16_seq  + bias_seq;
-				din_OT0_pre = dout_OT1 + mac_16_seq  + bias_seq;
+				din_OT0 = dout_OT1 + mac_16_seq  + bias_seq;
 			end
 			else if(mem_epoch_seq[0])
 			begin
-				addr_OT0_pre = mem_counter_seq;
-				addr_OT1_pre = mem_counter_seq;
+				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
+				addr_OT1_pre = counter_seq - 3; //mem_counter_seq;
 				//num_from_mem_comb = dout_OT0;
 				//num_to_mem_comb = num_from_mem_seq + mac_16_seq;
-				din_OT1_pre = dout_OT0 + mac_16_seq;
+				din_OT1 = dout_OT0 + mac_16_seq;
 			end
 			else
 			begin
-				addr_OT0_pre = mem_counter_seq;
-				addr_OT1_pre = mem_counter_seq;
+				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
+				addr_OT1_pre = counter_seq - 3; //mem_counter_seq;
 				//num_from_mem_comb = dout_OT1;
 				//num_to_mem_comb = num_from_mem_seq + mac_16_seq  + bias_seq;
-				din_OT0_pre = dout_OT1 + mac_16_seq;
+				din_OT0 = dout_OT1 + mac_16_seq;
 			end
 		end
 
