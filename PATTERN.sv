@@ -136,7 +136,7 @@ end endtask
 
 task INPUT_IMAGE; begin
 	image_valid = 1;
-	repeat(3500)@(negedge clk);
+	repeat(4000)@(negedge clk);
 	image_valid = 0;
 	repeat(12)@(negedge clk);
 end endtask

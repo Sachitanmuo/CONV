@@ -1,0 +1,118 @@
+Magic 271485
+Revision Verdi_P-2019.06
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 1920 27 1920 1057 294 236
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 21929.651872 22269.575160
+cursor 22098.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 29
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
+addSignal -h 15 /testbench/u_conv/epoch_counter_seq[5:0]
+addSignal -h 15 -holdScope mem_epoch_seq[5:0]
+addSignal -h 15 -holdScope out_data[15:0]
+addSignal -h 15 -holdScope out_data_pre[15:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_OT0[11:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_OT1[11:0]
+addSignal -h 15 -holdScope epoch_counter_seq[5:0]
+addSignal -h 15 -holdScope mem_epoch_seq[5:0]
+addSignal -h 15 -holdScope out_data[15:0]
+addSignal -h 15 -holdScope dout_OT0[24:0]
+addSignal -h 15 -holdScope dout_OT1[24:0]
+addSignal -h 15 -holdScope din_OT0[24:0]
+addSignal -h 15 -holdScope din_OT1[24:0]
+addSignal -h 15 -holdScope we_OT0
+addSignal -h 15 -holdScope we_OT1
+addSignal -h 15 -holdScope out_data_pre[15:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope counter_seq[15:0]
+addSignal -h 15 -holdScope mem_epoch_seq[5:0]
+addSignal -h 15 -holdScope epoch_counter_seq[5:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope x_counter_seq[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope y_counter_seq[7:0]
+addSignal -h 15 -holdScope cur_state[2:0]
+addSignal -h 15 -holdScope image_valid
+addSignal -h 15 -holdScope mac_16_seq[24:0]
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_OT0[11:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope addr_OT1[11:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cal_en_counter_seq[3:0]
+addGroup "G2"
+addGroup "G3"
+addGroup "G4"
+addGroup "G5"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/SRAM_I000"
+"/testbench"
+"/testbench/u_SRAM_000"
+"/testbench/u_SRAM_001"
+"/testbench/u_SRAM_B00"
+"/testbench/u_SRAM_K1"
+"/testbench/u_SRAM_O0"
+"/testbench/u_SRAM_OT0"
+"/testbench/u_SRAM_OT1"
+"/testbench/u_conv"
+"/testbench/u_pattern"
+
+SCOPE_LIST_BEGIN
+"/SRAM_I000"
+"/testbench"
+"/testbench/u_conv"
+"/testbench/u_SRAM_O0"
+"/testbench/u_SRAM_OT0"
+"/testbench/u_SRAM_K1"
+"/testbench/u_SRAM_000"
+"/testbench/u_SRAM_001"
+"/testbench/u_SRAM_OT1"
+"/testbench/u_SRAM_B00"
+"/testbench/u_pattern"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

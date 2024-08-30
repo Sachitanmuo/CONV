@@ -223,8 +223,8 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveRestoreRCDirHistory = "\"/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/novas.rc\"" "\"/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/signal.rc\""
 nWaveOpenFsdbDirHistory = "\"/home/IMGAE_INT/G6/2020_grad_cell/01_RTL/SME.fsdb\"" "\"/home/IMGAE_INT/QARep_VGG/conv_3x3/conv.fsdb\"" "\"/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/conv.fsdb\""
+nWaveRestoreRCDirHistory = "\"/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/novas.rc\"" "\"/RAID2/LAB/icssl/icsslRA27/JimmyCheng/Conv_3x3/signal.rc\""
 [Form]
 version = Verdi_P-2019.06
 wave/unknownSave.fm = 100,100,520,275
@@ -232,9 +232,9 @@ wave/unknownSave.fm = 100,100,520,275
 autoSaveSession = FALSE
 TclAutoSource = 
 SyncBrowserDir = TRUE
-cmd_enter_form = FALSE
 version = Verdi_P-2019.06
 SignalCaseInSensitive = FALSE
+cmd_enter_form = FALSE
 ShowWndCtntDuringResizing = FALSE
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
@@ -387,13 +387,14 @@ savePropDtl = TRUE
 [QtDialog]
 tipViewerDlg = 751,371,398,259
 unknownSave = 80,78,461,245
+FileWithNoteForm_base = 2553,285,653,541
+restoreSigDlg = 492,204,551,438
+openFileDlg = 2579,303,602,505
 QwWarnMsgDlg = 434,330,600,250
 saveSigDlg = 2604,362,551,386
-restoreSigDlg = 2604,336,551,438
-FileWithNoteForm_base = 2553,285,653,541
-openFileDlg = 467,171,602,505
-qWaveSignalDialog = 548,166,800,579
-QwUserAskDlg = 3132,712,324,134
+gridOptionsDialog = 2669,421,421,269
+QwUserAskDlg = 3132,712,324,114
+qWaveSignalDialog = 2963,279,800,644
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -730,8 +731,8 @@ maskFsaRegRule = TRUE
 maskFsaCoreRule = TRUE
 maskFsaSfsmRule = TRUE
 maskFsaEcrRule = TRUE
-getSignalForm = 548 166 800 579 164 481 390 114
-viewPort = 0 27 1536 696 219 65
+getSignalForm = 2963 279 800 644 164 546 390 131
+viewPort = 1920 27 1920 1057 294 236
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98

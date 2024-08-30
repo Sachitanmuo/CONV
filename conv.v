@@ -167,7 +167,7 @@ reg signed [`BIT_PER_WORD_OT-1:0] din_OT0_pre,din_OT1_pre;
 reg [`BIT_PER_WORD_O-1:0] din_O0_pre, din_O1_pre;
 reg [$clog2(`WORD_AMOUNT_OT)-1:0] addr_OT0_pre,addr_OT1_pre;
 reg [$clog2(`WORD_AMOUNT_O):0] addr_O0_pre,addr_O1_pre;
-reg [2:0] cal_en_counter_seq,cal_en_counter_comb;//算到第56之後，(先清空再回去)，然後等x_counter == 2才可以繼續算conv，如果<2的話都要先暫停，所以要把counter>6改成用x_counter判斷
+reg [3:0] cal_en_counter_seq,cal_en_counter_comb;//算到第56之後，(先清空再回去)，然後等x_counter == 2才可以繼續算conv，如果<2的話都要先暫停，所以要把counter>6改成用x_counter判斷
 //kernel and image and bias reg
 
 //SRAM
@@ -812,7 +812,7 @@ begin
 
 		x_counter_comb = 0;
 		y_counter_comb = 0;
-		cal_en_counter_comb = 3;
+		cal_en_counter_comb = 6;
 
 		if(bias_valid)
 		begin
@@ -868,7 +868,7 @@ begin
 	//[y][x]
 	IMAGE://even, in:dout_B0, out:dout_B1 odd, in:dout_B1, out:dout_B0
 	begin
-		if(cal_en_counter_seq < 3)
+		if(cal_en_counter_seq < 6)
 		begin
 			cal_en_counter_comb = cal_en_counter_seq + 1;
 			addr_B00 = 0;
@@ -888,24 +888,9 @@ begin
 		//	we_B1_pre = !we_B1;
 		//end
 
-	if(cal_en_counter_seq > 2)//superior
+	if(cal_en_counter_seq > 5)//superior
 	begin
 		//counter part
-		if(counter_seq < output_image_size * output_image_size + 4)//because of pipeline
-		begin
-			counter_comb = counter_seq + 1;
-		end
-		else
-		begin
-			if(mem_epoch_seq < 2)
-			begin
-				counter_comb = 0;
-			end
-			else
-			begin
-				counter_comb = counter_seq + 1;
-			end
-		end
 		
 		if(x_counter_seq < output_image_size - 1)
 		begin
@@ -1374,6 +1359,74 @@ begin
 		endcase
 
 		//output temp	
+
+		if((counter_seq > 2 ) && (mem_epoch_seq == 0))
+		begin
+			//addr_OT0_pre = counter_seq - 3;
+			din_OT0 = mac_16_seq;
+		end
+		else if(counter_seq > 2)
+		begin
+			if(mem_epoch_seq == mem_epoch)
+			begin
+				//addr_OT0_pre = counter_seq - 3;
+				//addr_OT1_pre = counter_seq - 3;
+				din_OT0 = dout_OT1 + mac_16_seq  + bias_seq;
+			end
+			else if(mem_epoch_seq[0])
+			begin
+				//addr_OT0_pre = counter_seq - 3;
+				//addr_OT1_pre = counter_seq - 3;
+				din_OT1 = dout_OT0 + mac_16_seq;
+			end
+			else
+			begin
+				//addr_OT0_pre = counter_seq - 3;
+				//addr_OT1_pre = counter_seq - 3;
+				din_OT0 = dout_OT1 + mac_16_seq;
+			end
+		end
+
+		if(counter_seq == output_image_size * output_image_size + 3)
+		begin
+			mem_epoch_comb = mem_epoch_seq + 1;
+			mem_counter_comb = 0;
+			if(mem_epoch_seq == 1)
+			begin
+				final_flag_pre = 1;
+			end
+		end
+
+		if((x_counter_seq > 2) && (cal_en_counter_seq == 6))
+		begin
+			addr_OT0_pre = counter_seq - 3;
+			addr_OT1_pre = counter_seq - 3;
+		end
+		if((x_counter_seq == 0) && (cal_en_counter_seq < 4))
+		begin
+			addr_OT0_pre = counter_seq - 3 + cal_en_counter_seq;
+			addr_OT1_pre = counter_seq - 3 + cal_en_counter_seq;
+		end
+
+		if(cal_en_counter_seq > 5)//不確定是不是從這裡開始拿，要等余俊瑋給我測資。
+		begin
+			if(counter_seq < output_image_size * output_image_size + 4)//because of pipeline
+			begin
+				counter_comb = counter_seq + 1;
+			end
+			else
+			begin
+				if(mem_epoch_seq < 2)
+				begin
+					counter_comb = 0;
+				end
+				else
+				begin
+					counter_comb = counter_seq + 1;
+				end
+			end
+		end
+
 		if(mem_epoch_seq != 3)
 		begin
 			if(mem_epoch_seq == 0)
@@ -1389,53 +1442,6 @@ begin
 			begin
 				we_OT0_pre = 1;
 				we_OT1_pre = 0;
-			end
-		end
-
-		//if(x_counter_seq > 2)//might be wrong
-		if(counter_seq > 2)
-		begin
-			mem_counter_comb = mem_counter_seq + 1;
-
-			if(mem_epoch_seq == 0)
-			begin
-				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
-				//num_to_mem_comb = mac_16_seq;
-				din_OT0 = mac_16_seq;
-			end
-			else if(mem_epoch_seq == mem_epoch)//last mem epoch
-			begin
-				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
-				addr_OT1_pre = counter_seq - 3; //mem_counter_seq;
-				//num_from_mem_comb = dout_OT1;
-				//num_to_mem_comb = num_from_mem_seq + mac_16_seq  + bias_seq;
-				din_OT0 = dout_OT1 + mac_16_seq  + bias_seq;
-			end
-			else if(mem_epoch_seq[0])
-			begin
-				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
-				addr_OT1_pre = counter_seq - 3; //mem_counter_seq;
-				//num_from_mem_comb = dout_OT0;
-				//num_to_mem_comb = num_from_mem_seq + mac_16_seq;
-				din_OT1 = dout_OT0 + mac_16_seq;
-			end
-			else
-			begin
-				addr_OT0_pre = counter_seq - 3; //mem_counter_seq;
-				addr_OT1_pre = counter_seq - 3; //mem_counter_seq;
-				//num_from_mem_comb = dout_OT1;
-				//num_to_mem_comb = num_from_mem_seq + mac_16_seq  + bias_seq;
-				din_OT0 = dout_OT1 + mac_16_seq;
-			end
-		end
-
-		if(counter_seq == output_image_size * output_image_size - 1)
-		begin
-			mem_epoch_comb = mem_epoch_seq + 1;
-			mem_counter_comb = 0;
-			if(mem_epoch_seq == 1)
-			begin
-				final_flag_pre = 1;
 			end
 		end
 //end
