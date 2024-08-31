@@ -1,2 +1,30 @@
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+Report : area
+Design : conv
+Version: T-2022.03
+Date   : Sat Aug 31 21:14:21 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /RAID2/LAB/icssl/icsslRA01/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db)
+
+Number of ports:                         2525
+Number of nets:                         56033
+Number of cells:                        45764
+Number of combinational cells:          38176
+Number of sequential cells:              7568
+Number of macros/black boxes:               0
+Number of buf/inv:                       6103
+Number of references:                     126
+
+Combinational area:             494630.848290
+Buf/Inv area:                    31077.696149
+Noncombinational area:          244697.175995
+Macro/Black Box area:                0.000000
+Net Interconnect area:         6579893.424408
+
+Total cell area:                739328.024285
+Total area:                    7319221.448693
+1

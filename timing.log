@@ -1,2 +1,59 @@
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : conv
+Version: T-2022.03
+Date   : Sat Aug 31 21:14:22 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: kernel_valid
+              (input port clocked by clk)
+  Endpoint: kernel_seq_reg[20][0][0][1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  conv               tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (fall edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  input external delay                                    0.00       5.50 r
+  kernel_valid (in)                                       0.01       5.51 r
+  U12282/Y (INVX3)                                        0.04       5.54 f
+  U13849/Y (NOR2X2)                                       0.31       5.86 r
+  U14323/Y (INVX3)                                        0.48       6.34 f
+  U14501/Y (NOR3X6)                                       0.24       6.59 r
+  U41809/Y (NAND2X6)                                      0.16       6.75 f
+  U11960/Y (NOR2X1)                                       0.79       7.54 r
+  U14846/Y (NAND2X1)                                      0.51       8.05 f
+  U25704/Y (CLKBUFX3)                                     0.77       8.83 f
+  U14390/Y (INVX3)                                        0.66       9.48 r
+  U23135/Y (AOI22XL)                                      0.30       9.78 f
+  U47043/Y (OAI21XL)                                      0.33      10.11 r
+  kernel_seq_reg[20][0][0][1]/D (DFFRX1)                  0.00      10.11 r
+  data arrival time                                                 10.11
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.50      10.50
+  clock uncertainty                                      -0.10      10.40
+  kernel_seq_reg[20][0][0][1]/CK (DFFRX1)                 0.00      10.40 r
+  library setup time                                     -0.29      10.11
+  data required time                                                10.11
+  --------------------------------------------------------------------------
+  data required time                                                10.11
+  data arrival time                                                -10.11
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

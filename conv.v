@@ -354,10 +354,10 @@ begin
 		we_OT0 <= 0;
 		we_OT1 <= 0;
 
-		addr_00 <= 0;
-		addr_01 <= 0;
-		addr_10 <= 0;
-		addr_11 <= 0;
+		//addr_00 <= 0;
+		//addr_01 <= 0;
+		//addr_10 <= 0;
+		//addr_11 <= 0;
 		//addr_B00 <= 0;
 		//addr_B01 <= 0;
 		//addr_B10 <= 0;
@@ -371,10 +371,10 @@ begin
 
 		counter_seq <= 0;
 
-		din_B00 <= 0;
-		din_B01 <= 0;
-		din_B10 <= 0;
-		din_B11 <= 0;
+		//din_B00 <= 0;
+		//din_B01 <= 0;
+		//din_B10 <= 0;
+		//din_B11 <= 0;
 
 		//din_OT0 <= 0;
 		//din_OT1 <= 0;
@@ -418,8 +418,8 @@ begin
 
 		we_I <= we_I_pre;
 		we_K <= we_K_pre;
-		we_O0 <= we_O0_pre;
-		we_O1 <= we_O1_pre;
+		//we_O0 <= we_O0_pre;
+		//we_O1 <= we_O1_pre;
 		//we_B0 <= we_B0_pre;
 		//we_B1 <= we_B1_pre;
 		we_BIAS <= we_BIAS_pre;
@@ -471,15 +471,23 @@ begin
 end
 //seq without for loop
 
-assign d00 = dout_000[127:120];
-assign d01 = dout_001[127:120];
-assign d10 = dout_010[127:120];
-assign d11 = dout_011[127:120];
+//assign d00 = dout_000[127:120];
+//assign d01 = dout_001[127:120];
+//assign d10 = dout_010[127:120];
+//assign d11 = dout_011[127:120];
 
 //FSM control
 always@*
 begin
+	din_OT1 = 0;
+	we_K_pre = 0;
+	addr_BIAS_pre = 0;
+	we_I_pre = 0;
+	addr_OT0_pre = addr_OT0;
+	addr_OT1_pre = addr_OT1;
+	din_OT0 = 0;
 	next_state = cur_state;
+
 	case(cur_state)
 	IDLE:
 	begin
@@ -580,10 +588,10 @@ begin
 	num_from_mem_comb = num_from_mem_seq;
 	cal_en_counter_comb = cal_en_counter_seq;
 	addr_K_pre = 0;
-	//addr_00_pre = 0;
-	//addr_01_pre = 0;
-	//addr_10_pre = 0;
-	//addr_11_pre = 0;
+	addr_00 = 0;
+	addr_01 = 0;
+	addr_10 = 0;
+	addr_11 = 0;
 	addr_B00 = 0;
 	addr_B01 = 0;
 	addr_B10 = 0;
@@ -1236,7 +1244,7 @@ begin
 					din_B00 = dout_110;
 					din_B01 = dout_111;
 				end
-				for(i=0;i<input_sram_size;i++)
+				for(i=0;i<input_sram_size;i=i+1)
 				begin
 					image_comb[i][0][0] = 0;
 					image_comb[i][0][1] = 0;
@@ -1248,7 +1256,7 @@ begin
 
 			else if(y_counter_seq[0] == 1)
 			begin
-				for(i=0;i<input_sram_size;i++)
+				for(i=0;i<input_sram_size;i=i+1)
 				begin
 					image_comb[i][0][0] = image_seq[i][0][2];
 					image_comb[i][1][0] = image_seq[i][1][2];
@@ -1303,7 +1311,7 @@ begin
 
 			else//y_counter_seq[0] == 0
 			begin
-				for(i=0;i<input_sram_size;i++)
+				for(i=0;i<input_sram_size;i=i+1)
 				begin
 					image_comb[i][0][0] = image_seq[i][0][2];
 					image_comb[i][1][0] = image_seq[i][1][2];
@@ -1359,53 +1367,93 @@ begin
 		endcase
 
 		//output temp	
-
-		if((counter_seq > 2 ) && (mem_epoch_seq == 0))
+		if(mem_epoch_seq == 0)//第一次只需要input
 		begin
-			//addr_OT0_pre = counter_seq - 3;
-			din_OT0 = mac_16_seq;
-		end
-		else if(counter_seq > 2)
-		begin
-			if(mem_epoch_seq == mem_epoch)
+			if(counter_seq > 2)
 			begin
-				//addr_OT0_pre = counter_seq - 3;
-				//addr_OT1_pre = counter_seq - 3;
-				din_OT0 = dout_OT1 + mac_16_seq  + bias_seq;
+				din_OT0 = mac_16_seq;
+			end
+
+			if((x_counter_seq > 2) && (cal_en_counter_seq == 6))
+			begin
+				addr_OT0_pre = counter_seq - 3;
+			end
+			if((x_counter_seq == 0) && (cal_en_counter_seq < 4))
+			begin
+				addr_OT0_pre = counter_seq - 3 + cal_en_counter_seq;
+			end
+		end
+		else
+		begin
+			if(mem_epoch_seq == mem_epoch - 1)//last
+			begin
+				if(counter_seq > 2)
+				begin
+					din_OT0 = mac_16_seq;
+				end
+
+				if(/*(x_counter_seq > 1) &&*/ (cal_en_counter_seq == 6))
+				begin
+					addr_OT1_pre = counter_seq - 1;
+				end
+
+				if((x_counter_seq > 2) && (cal_en_counter_seq == 6))
+				begin
+					addr_OT0_pre = counter_seq - 3;
+				end
+
+				if((x_counter_seq == 0) && (cal_en_counter_seq < 4))
+				begin
+					addr_OT1_pre = counter_seq - 2 + cal_en_counter_seq;
+					addr_OT0_pre = counter_seq - 3 + cal_en_counter_seq;
+				end
 			end
 			else if(mem_epoch_seq[0])
 			begin
-				//addr_OT0_pre = counter_seq - 3;
-				//addr_OT1_pre = counter_seq - 3;
-				din_OT1 = dout_OT0 + mac_16_seq;
+				if(counter_seq > 2)
+				begin
+					din_OT1 =mac_16_seq;
+				end
+
+				if(/*(x_counter_seq > 1) &&*/ (cal_en_counter_seq == 6))
+				begin
+					addr_OT0_pre = counter_seq - 1;
+				end
+
+				if((x_counter_seq > 2) && (cal_en_counter_seq == 6))
+				begin
+					addr_OT1_pre = counter_seq - 3;
+				end
+
+				if((x_counter_seq == 0) && (cal_en_counter_seq < 4))
+				begin
+					addr_OT0_pre = counter_seq - 2 + cal_en_counter_seq;
+					addr_OT1_pre = counter_seq - 3 + cal_en_counter_seq;
+				end
 			end
 			else
 			begin
-				//addr_OT0_pre = counter_seq - 3;
-				//addr_OT1_pre = counter_seq - 3;
-				din_OT0 = dout_OT1 + mac_16_seq;
-			end
-		end
+				if(counter_seq > 2)
+				begin
+					din_OT0 = mac_16_seq;
+				end
 
-		if(counter_seq == output_image_size * output_image_size + 3)
-		begin
-			mem_epoch_comb = mem_epoch_seq + 1;
-			mem_counter_comb = 0;
-			if(mem_epoch_seq == 1)
-			begin
-				final_flag_pre = 1;
-			end
-		end
+				if(/*(x_counter_seq > 1) &&*/ (cal_en_counter_seq == 6))
+				begin
+					addr_OT1_pre = counter_seq - 1;
+				end
 
-		if((x_counter_seq > 2) && (cal_en_counter_seq == 6))
-		begin
-			addr_OT0_pre = counter_seq - 3;
-			addr_OT1_pre = counter_seq - 3;
-		end
-		if((x_counter_seq == 0) && (cal_en_counter_seq < 4))
-		begin
-			addr_OT0_pre = counter_seq - 3 + cal_en_counter_seq;
-			addr_OT1_pre = counter_seq - 3 + cal_en_counter_seq;
+				if((x_counter_seq > 2) && (cal_en_counter_seq == 6))
+				begin
+					addr_OT0_pre = counter_seq - 3;
+				end
+
+				if((x_counter_seq == 0) && (cal_en_counter_seq < 4))
+				begin
+					addr_OT1_pre = counter_seq - 2 + cal_en_counter_seq;
+					addr_OT0_pre = counter_seq - 3 + cal_en_counter_seq;
+				end
+			end
 		end
 
 		if(cal_en_counter_seq > 5)//不確定是不是從這裡開始拿，要等余俊瑋給我測資。
@@ -1444,7 +1492,6 @@ begin
 				we_OT1_pre = 0;
 			end
 		end
-//end
 	end
 
 	OUT:
@@ -1452,6 +1499,12 @@ begin
 
 	end
 	endcase
+
+	if((counter_seq == output_image_size * output_image_size) && (cal_en_counter_seq == 4))//這裡基本上看波形刻的
+	begin
+		mem_epoch_comb = mem_epoch_seq + 1;
+		mem_counter_comb = 0;
+	end
 
 	if(mem_epoch_seq == 3 && counter_seq == 4)//to be modified
 	begin
@@ -1488,7 +1541,7 @@ begin
 		begin
 			for(k=0;k<kernel_size;k=k+1)
 			begin
-				mul_comb[i][j][k] = kernel_seq[i][j][k] * image_seq[i][j][k];
+				mul_comb[i][j][k] = kernel_seq[i + input_sram_size * (mem_epoch_seq)][j][k] * image_seq[i][j][k];
 			end
 		end
 	end
@@ -1498,61 +1551,95 @@ begin
 		mac_comb[i] = mul_seq[i][0][0] + mul_seq[i][0][1] + mul_seq[i][0][2] + mul_seq[i][1][0] + mul_seq[i][1][1] + mul_seq[i][1][2] + mul_seq[i][2][0] + mul_seq[i][2][1] + mul_seq[i][2][2];
 	end
 
-	mac_16_comb = mac_seq[0] + mac_seq[1] + mac_seq[2] + mac_seq[3] + mac_seq[4] + mac_seq[5] + mac_seq[6] + mac_seq[7] + mac_seq[8] + mac_seq[9] + mac_seq[10] + mac_seq[11] + mac_seq[12] + mac_seq[13] + mac_seq[14] + mac_seq[15];
-end
-//convolution
-
-//pre relu
-always@*
-begin
-	for(i=0;i<input_channel_size;i=i+1)
+	if(mem_epoch_seq == 0)
 	begin
-		pre_relu_comb = pre_relu_seq + bias_seq;
+		mac_16_comb = mac_seq[0] + mac_seq[1] + mac_seq[2] + mac_seq[3] + mac_seq[4] + mac_seq[5] + mac_seq[6] + mac_seq[7] + mac_seq[8] + mac_seq[9] + mac_seq[10] + mac_seq[11] + mac_seq[12] + mac_seq[13] + mac_seq[14] + mac_seq[15];
+	end
+	else
+	begin
+		if(mem_epoch_seq == mem_epoch - 1)
+		begin
+			mac_16_comb = /*bias_seq*/ + dout_OT1 + mac_seq[0] + mac_seq[1] + mac_seq[2] + mac_seq[3] + mac_seq[4] + mac_seq[5] + mac_seq[6] + mac_seq[7] + mac_seq[8] + mac_seq[9] + mac_seq[10] + mac_seq[11] + mac_seq[12] + mac_seq[13] + mac_seq[14] + mac_seq[15];
+		end
+		else if(mem_epoch_seq[0])
+		begin
+			mac_16_comb = dout_OT0 + mac_seq[0] + mac_seq[1] + mac_seq[2] + mac_seq[3] + mac_seq[4] + mac_seq[5] + mac_seq[6] + mac_seq[7] + mac_seq[8] + mac_seq[9] + mac_seq[10] + mac_seq[11] + mac_seq[12] + mac_seq[13] + mac_seq[14] + mac_seq[15];
+		end
+		else
+		begin
+			mac_16_comb = dout_OT1 + mac_seq[0] + mac_seq[1] + mac_seq[2] + mac_seq[3] + mac_seq[4] + mac_seq[5] + mac_seq[6] + mac_seq[7] + mac_seq[8] + mac_seq[9] + mac_seq[10] + mac_seq[11] + mac_seq[12] + mac_seq[13] + mac_seq[14] + mac_seq[15];
+		end
 	end
 end
-//pre relu
+//convolution
 
 //ReLU
 always@*
 begin
 	
 	out_data_pre = 0;
+	addr_O0_pre = 6172;
+	addr_O1_pre = 6172;
+	din_O0_pre = 0;
+	din_O1_pre = 0;
+    we_O0 = 0;
+	we_O1 = 0;
 
 	if(epoch_counter_seq[0])
 	begin
-		we_O0_pre = 0;
-		we_O1_pre = 1;
+		we_O0 = 0;
+		we_O1 = 1;
 	end
 	else
 	begin
-		we_O0_pre = 1;
-		we_O1_pre = 0;
+		we_O0 = 1;
+		we_O1 = 0;
 	end
 
-	if(mem_epoch_seq > 1 && counter_seq > 4)
+	if(mem_epoch_seq > 1 && counter_seq > 3)
 	begin
-		addr_O0_pre = (counter_seq - 5) + output_image_size * output_image_size * epoch_counter_seq/2;
-		addr_O1_pre = (counter_seq - 5) + output_image_size * output_image_size * (epoch_counter_seq-1)/2;
-		if(mac_16_seq < 0)
-		begin
-			out_data_pre = 0;
-		end
-		else
-		begin
-			out_data_pre = mac_16_seq;
-		end
 
 		if(epoch_counter_seq[0])
 		begin
-			din_O1_pre = out_data_pre;
+            if(counter_seq < output_image_size * output_image_size)
+            begin
+			    addr_O1_pre = (counter_seq - 4) + output_image_size * output_image_size * (epoch_counter_seq-1)/2;
+            end
+            else
+            begin
+                addr_O1_pre = cal_en_counter_seq + (counter_seq - 4) + output_image_size * output_image_size * (epoch_counter_seq-1)/2;
+            end
+			if(mac_16_seq < 0)
+			begin
+				din_O1_pre = 0;
+			end
+			else
+			begin
+				din_O1_pre = mac_16_seq;
+			end
 		end
 		else
 		begin
-			din_O0_pre = out_data_pre;
+            if(counter_seq < output_image_size * output_image_size)
+            begin
+			    addr_O0_pre = (counter_seq - 4) + output_image_size * output_image_size * epoch_counter_seq/2;
+            end
+            else
+            begin
+                addr_O0_pre = cal_en_counter_seq + (counter_seq - 4) + output_image_size * output_image_size * epoch_counter_seq/2;
+            end
+			if(mac_16_seq < 0)
+			begin
+				din_O0_pre = 0;
+			end
+			else
+			begin
+				din_O0_pre = mac_16_seq;
+			end
 		end
 	end
 end
 //ReLU
 
-assign debug0 = image_comb[0][2][2];
+//assign debug0 = image_comb[0][2][2];
 endmodule

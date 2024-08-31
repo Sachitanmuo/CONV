@@ -147,19 +147,19 @@ module testbench;
     initial
     begin
         $readmemb("input_cgroup0h_0w_0.txt", u_SRAM_000.memory);
-        #20000;
+        #24000;
         $readmemb("input_cgroup2h_0w_0.txt", u_SRAM_000.memory);
-        #37100;
+        #39100;
         $readmemb("input_cgroup0h_0w_0.txt", u_SRAM_000.memory);
+        #33000;
+        $readmemb("input_cgroup2h_0w_0.txt", u_SRAM_000.memory);
         #30000;
-        $readmemb("input_cgroup2h_0w_0.txt", u_SRAM_000.memory);
-        #27300;
         $readmemb("input_cgroup0h_0w_0.txt", u_SRAM_000.memory);
-        #30700;
+        #33900;
         $readmemb("input_cgroup2h_0w_0.txt", u_SRAM_000.memory);
-        #26500;
+        #29200;
         $readmemb("input_cgroup0h_0w_0.txt", u_SRAM_000.memory);
-        #28400;
+        #30800;
         $readmemb("input_cgroup2h_0w_0.txt", u_SRAM_000.memory);
     end
 
@@ -173,19 +173,19 @@ module testbench;
     initial
     begin
         $readmemb("input_cgroup0h_0w_1.txt", u_SRAM_001.memory);
-        #20000;
+        #24000;
         $readmemb("input_cgroup2h_0w_1.txt", u_SRAM_001.memory);
-        #37100;
+        #39100;
         $readmemb("input_cgroup0h_0w_1.txt", u_SRAM_001.memory);
+        #33000;
+        $readmemb("input_cgroup2h_0w_1.txt", u_SRAM_001.memory);
         #30000;
-        $readmemb("input_cgroup2h_0w_1.txt", u_SRAM_001.memory);
-        #27300;
         $readmemb("input_cgroup0h_0w_1.txt", u_SRAM_001.memory);
-        #30700;
+        #33900;
         $readmemb("input_cgroup2h_0w_1.txt", u_SRAM_001.memory);
-        #26500;
+        #29200;
         $readmemb("input_cgroup0h_0w_1.txt", u_SRAM_001.memory);
-        #28400;
+        #30800;
         $readmemb("input_cgroup2h_0w_1.txt", u_SRAM_001.memory);
     end
     SRAM_I u_SRAM_010 (
@@ -198,19 +198,19 @@ module testbench;
     initial
     begin
         $readmemb("input_cgroup0h_1w_0.txt", u_SRAM_010.memory);
-        #20000;
+        #24000;
         $readmemb("input_cgroup2h_1w_0.txt", u_SRAM_010.memory);
-        #37100;
+        #39100;
         $readmemb("input_cgroup0h_1w_0.txt", u_SRAM_010.memory);
+        #33000;
+        $readmemb("input_cgroup2h_1w_0.txt", u_SRAM_010.memory);
         #30000;
-        $readmemb("input_cgroup2h_1w_0.txt", u_SRAM_010.memory);
-        #27300;
         $readmemb("input_cgroup0h_1w_0.txt", u_SRAM_010.memory);
-        #30700;
+        #33900;
         $readmemb("input_cgroup2h_1w_0.txt", u_SRAM_010.memory);
-        #26500;
+        #29200;
         $readmemb("input_cgroup0h_1w_0.txt", u_SRAM_010.memory);
-        #28400;
+        #30800;
         $readmemb("input_cgroup2h_1w_0.txt", u_SRAM_010.memory);
     end
 
@@ -224,19 +224,19 @@ module testbench;
     initial
     begin
         $readmemb("input_cgroup0h_1w_1.txt", u_SRAM_011.memory);
-        #20000;
+        #24000;
         $readmemb("input_cgroup2h_1w_1.txt", u_SRAM_011.memory);
-        #37100;
+        #39100;
         $readmemb("input_cgroup0h_1w_1.txt", u_SRAM_011.memory);
+        #33000;
+        $readmemb("input_cgroup2h_1w_1.txt", u_SRAM_011.memory);
         #30000;
-        $readmemb("input_cgroup2h_1w_1.txt", u_SRAM_011.memory);
-        #27300;
         $readmemb("input_cgroup0h_1w_1.txt", u_SRAM_011.memory);
-        #30700;
+        #33900;
         $readmemb("input_cgroup2h_1w_1.txt", u_SRAM_011.memory);
-        #26500;
+        #29200;
         $readmemb("input_cgroup0h_1w_1.txt", u_SRAM_011.memory);
-        #28400;
+        #30800;
         $readmemb("input_cgroup2h_1w_1.txt", u_SRAM_011.memory);
     end
 
@@ -379,7 +379,7 @@ module testbench;
             $display("Error: Could not open file!");
             $finish;
         end
-        #229000;
+        #253000;
         $display("output file writing...");
         for (i = 0; i < 6272; i = i + 1) begin
             //$fwrite(outfile_O0, "SRAM_O0[%6d] = %16b\n", i, u_SRAM_O0.memory[i]);
@@ -391,7 +391,7 @@ module testbench;
         $fclose(outfile_O0);
         $fclose(outfile_O1);
         
-        $finish;
+        //$finish;
     end
     //============================================
 
